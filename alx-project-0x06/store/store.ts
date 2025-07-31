@@ -1,3 +1,4 @@
+// store/store.ts
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
