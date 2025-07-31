@@ -1,12 +1,12 @@
+// pages/counter-app.tsx
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/store/store";
-import { RootState } from "@/store/store";
-import { increment, decrement } from "@/store/store";
+import { increment, decrement, selectCount } from "@/store/counterSlice";
 import Header from "@/components/layouts/Header";
 
 const CounterApp = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useAppDispatch();
+  const count = useSelector(selectCount); // ✅ select from Redux
+  const dispatch: ReturnType<typeof useAppDispatch> = useAppDispatch(); // ✅ required
 
   return (
     <div>
